@@ -6,6 +6,7 @@ $(document).ready(function(){
 	var gameCompleted=0;
 	var turnsCompleted=0;
 	
+	/*Resets the game.*/
 	function resetGameFunction(){
 		for(var i=0;i<9;i++){
 			$('#'+i).prop('value',"-");
@@ -16,6 +17,7 @@ $(document).ready(function(){
 		gameCompleted=0;
 		turnsCompleted=0;
 	}
+	/*Marks turn of player and then checks if player has won and ends game if player has won.*/
 	function playerTurnFunction(clickedSpace){
 		turnsCompleted+=1;
 		boardTracking[clickedSpace]=playerTurn;
@@ -61,7 +63,8 @@ $(document).ready(function(){
 		}
 	
 	}
-	
+	/*Goes through computer turn if the game isn't over because of no additional board locations available
+	then checks if computer has won game. */
 	function computerTurnFunction(){
 		if(turnsCompleted==9){
 			alert("Draw");
